@@ -3,12 +3,12 @@ import {
   AppRegistry
 } from 'react-native';
 
-import MainPage from './src/MainPage'
+import Root from './src/Root'
 
 export default class AntUI extends Component {
   render() {
     return (
-      <MainPage/>
+      <Root/>
     );
   }
 }
