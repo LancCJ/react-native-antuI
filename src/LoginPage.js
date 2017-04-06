@@ -25,8 +25,10 @@ export default class LoginPage extends Component {
         this.setState({ animating: !this.state.animating });
         this.closeTimer = setTimeout(() => {
             this.setState({ animating: !this.state.animating });
-        }, 1000);
-        Actions.MainPage();
+            Actions.tabbar();
+        }, 2000);
+
+
     }
     render() {
         return (
@@ -45,7 +47,7 @@ export default class LoginPage extends Component {
                     <Button type="primary" onClick={this.showToast}>登 录</Button>
                     <ActivityIndicator
                         toast
-                        text="正在加载"
+                        text="正在登录"
                         animating={this.state.animating}
                     />
                 </Flex>

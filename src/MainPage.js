@@ -9,6 +9,7 @@ import MarketPage  from './market/MarketPage'
 import SettingPage from './setting/SettingPage'
 
 import {TabBar} from 'antd-mobile';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 export default class AntUI extends Component {
     constructor(props) {
