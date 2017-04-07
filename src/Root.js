@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
-
 import {Scene, Router, ActionConst, Modal} from 'react-native-router-flux';
-import Icon from 'react-native-vector-icons/FontAwesome';
 
 import LoginPage from './LoginPage'
-import MainPage from './MainPage'
+import IconText from './components/IconText'
 import TalkPage from './talk/TalkPage'
 import PeoplePage from './people/PeoplePage'
 import MarketPage from './market/MarketPage'
@@ -18,42 +16,42 @@ export default class Root extends Component {
                     <Scene key="root" hideNavBar>
                         <Scene key="LoginPage" component={LoginPage} title="用户登录" type={ActionConst.REFRESH}/>
 
-                        <Scene key="tabbar" tabs={true} hideNavBar type={ActionConst.REPLACE}>
+                        <Scene key="tabbar" tabs type={ActionConst.REPLACE}>
+
                             <Scene
                                 key="tab1"
-                                title="tab1"
-                                icon={<Icon name="rocket" size={30} color="#900"/>}
-
-
+                                title="会话"
+                                icon={props => IconText({ ...props, icon: 'ios-chatboxes' })}
+                                navigationBarStyle={{backgroundColor:'#108EE9'}} titleStyle={{color:'white'}}
                             >
-                                <Scene key="talk" component={TalkPage} initial={true}/>
+                                <Scene key="talk" component={TalkPage} initial={true} title="会话"/>
                             </Scene>
 
                             <Scene
                                 key="tab2"
-                                title="tab2"
-                                icon={<Icon name="rocket" size={30} color="#900"/>}
-
+                                title="联系人"
+                                icon={props => IconText({ ...props, icon: 'ios-people' })}
+                                navigationBarStyle={{backgroundColor:'#108EE9'}} titleStyle={{color:'white'}}
                             >
-                                <Scene key="people" component={PeoplePage}/>
+                                <Scene key="people" component={PeoplePage} title="联系人"/>
                             </Scene>
 
                             <Scene
                                 key="tab3"
-                                title="tab3"
-                                icon={<Icon name="rocket" size={30} color="#900"/>}
-
+                                title="应用"
+                                icon={props => IconText({ ...props, icon: 'md-appstore' })}
+                                navigationBarStyle={{backgroundColor:'#108EE9'}} titleStyle={{color:'white'}}
                             >
-                                <Scene key="market" component={MarketPage}/>
+                                <Scene key="market" component={MarketPage} title="应用"/>
                             </Scene>
 
                             <Scene
                                 key="tab4"
-                                title="tab4"
-                                icon={<Icon name="rocket" size={30} color="#900"/>}
-
+                                title="设置"
+                                icon={props => IconText({ ...props, icon: 'ios-cog' })}
+                                navigationBarStyle={{backgroundColor:'#108EE9'}} titleStyle={{color:'white'}}
                             >
-                                <Scene key="setting" component={SettingPage}/>
+                                <Scene key="setting" component={SettingPage} title="设置"/>
                             </Scene>
                         </Scene>
 

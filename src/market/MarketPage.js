@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+    StyleSheet,
     View,
     Text
 } from 'react-native';
@@ -7,10 +8,18 @@ import {
 export default class MarketPage extends Component {
     render() {
         return (
-            <View>
+            <View style={styles.container}>
                 <Text>应用页面</Text>
             </View>
         );
     }
 }
 
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#F7F7F7',
+    }
+});

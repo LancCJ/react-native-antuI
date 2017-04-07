@@ -9,7 +9,8 @@ import {Flex,
     InputItem,
     WhiteSpace,
     Button,
-    ActivityIndicator} from 'antd-mobile';
+    ActivityIndicator,
+} from 'antd-mobile';
 
 export default class LoginPage extends Component {
     constructor(props) {
@@ -18,18 +19,19 @@ export default class LoginPage extends Component {
             animating: false,
         };
     }
+
     componentWillUnmount() {
         clearTimeout(this.closeTimer);
     }
+
     showToast = () => {
         this.setState({ animating: !this.state.animating });
         this.closeTimer = setTimeout(() => {
             this.setState({ animating: !this.state.animating });
             Actions.tabbar();
         }, 2000);
-
-
     }
+
     render() {
         return (
             <View style={styles.container}>
@@ -51,8 +53,6 @@ export default class LoginPage extends Component {
                         animating={this.state.animating}
                     />
                 </Flex>
-
-
             </View>
         );
     }
