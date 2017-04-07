@@ -10,6 +10,7 @@ import {Flex,
     WhiteSpace,
     Button,
     ActivityIndicator,
+    WingBlank
 } from 'antd-mobile';
 
 export default class LoginPage extends Component {
@@ -35,7 +36,6 @@ export default class LoginPage extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <Flex direction="column" justify="center" >
                     <InputItem
                         placeholder="输入用户名"
                     >
@@ -52,7 +52,6 @@ export default class LoginPage extends Component {
                         text="正在登录"
                         animating={this.state.animating}
                     />
-                </Flex>
             </View>
         );
     }

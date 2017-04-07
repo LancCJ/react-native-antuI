@@ -5,6 +5,7 @@ import {
     Text
 } from 'react-native';
 
+import { ListView, List, SearchBar } from 'antd-mobile';
 
 export default class TalkPage extends Component {
     render() {
